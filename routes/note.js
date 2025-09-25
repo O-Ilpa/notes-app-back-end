@@ -12,7 +12,6 @@ router.post("/add", verifyMiddleWare, async (req, res) => {
     const { title, description } = req.body;
     const userId = req.body.id;
     const user = await User.findOne({ userId });
-    console.log(user.name);
     const newNote = new Note({
       title: title,
       description: description,
